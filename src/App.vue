@@ -1,17 +1,24 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <Contador titulo="Contador1"/>
+  <Contador titulo="Contador1" :valor="10"/>
+  <Contador titulo="Contador2" :valor="calcularValor()"/>
   <Contador titulo="Contador2"/>
-  <Contador titulo="Contador3"/>
 </template>
 <script>
+
 import Contador from './components/Contador.vue'
 
 export default {
   name: 'App',
   components: {
-    Contador
-  }
+    Contador,
+  },
+  methods:{
+    calcularValor(){
+            return 5+5*100;
+        },
+        
+    }
 }
 </script>
 
