@@ -1,21 +1,15 @@
 <template>
-  <PaginaPokemon />
+  <PokemonPage />
 </template>
 
 <script>
 //import Pregunta from './components/Pregunta.vue'
-import PaginaPokemon from './components/PaginaPokemon.vue'
+import PokemonPage from './pages/PokemonPage.vue'
 export default {
   name: 'App',
   components: {
-    //Pregunta,
-    PaginaPokemon
+    PokemonPage
   },
-  methods: {
-    calcularValor() {
-      return 5 + 5 * 10;
-    }
-  }
 }
 </script>
 <style>

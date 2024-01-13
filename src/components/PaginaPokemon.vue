@@ -17,7 +17,7 @@
           type="text"
           readonly
           onmousedown="return false;"
-          :value="datos.name"
+          :value="name"
         />
       </div>
 
@@ -27,7 +27,7 @@
           type="text"
           readonly
           onmousedown="return false;"
-          :value="datos.weight"
+          :value="weight"
         />
       </div>
 
@@ -37,7 +37,7 @@
           type="text"
           readonly
           onmousedown="return false;"
-          :value="datos.base"
+          :value="base"
         />
       </div>
     </div>
@@ -51,11 +51,11 @@ name: "PaginaPokemon",
     return {
       consulta: false,
       codigo: "",
-      datos: {
+     
         name: "",
         weight: "",
         base: "",
-      },
+    
     };
   },
 
@@ -69,16 +69,16 @@ name: "PaginaPokemon",
 
 
     async consumirAPI(idPokemon) {
-      const data = await fetch(
+      const {name,weight,base_experience} = await fetch(
         `https://pokeapi.co/api/v2/pokemon/${idPokemon}`
       ).then((result) => result.json());
 
-      const consulta = {
-        name: data.name,
-        weight: data.weight,
-        base: data.base_experience,
-      };
-      return consulta;
+  
+       this.name=name;
+       this.weight=weight;
+       this.base=base_experience;
+      
+      
     },
   },
 };
