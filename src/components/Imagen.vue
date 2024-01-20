@@ -20,6 +20,13 @@ export default {
 </script>
 
 <style>
+.container{
+    display: grid;
+   justify-content: center;
+   align-items: center;
+   margin: 0px 37px
+}
+
 
 img{
   width:200px;
